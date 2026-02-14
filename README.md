@@ -1,1 +1,619 @@
-# samsung
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung - Innovationen für eine bessere Zukunft</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: #fff;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid #d2d2d7;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 40px 100px;
+            background: #f5f5f7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, #0066cc 3px, transparent 3px),
+                radial-gradient(circle at 60% 70%, #6e6e73 2.5px, transparent 2.5px),
+                radial-gradient(circle at 80% 20%, #0066cc 2px, transparent 2px),
+                radial-gradient(circle at 35% 80%, #6e6e73 3px, transparent 3px),
+                radial-gradient(circle at 90% 50%, #0066cc 2.5px, transparent 2.5px),
+                radial-gradient(circle at 15% 60%, #6e6e73 2px, transparent 2px),
+                radial-gradient(circle at 70% 40%, #0066cc 3px, transparent 3px),
+                radial-gradient(circle at 45% 15%, #6e6e73 2.5px, transparent 2.5px),
+                radial-gradient(circle at 25% 90%, #0066cc 2px, transparent 2px),
+                radial-gradient(circle at 55% 55%, #6e6e73 3px, transparent 3px);
+            background-size: 100px 100px, 120px 120px, 90px 90px, 110px 110px, 95px 95px,
+                           105px 105px, 115px 115px, 85px 85px, 100px 100px, 130px 130px;
+            background-position: 0 0, 20px 30px, 50px 10px, 15px 40px, 60px 25px,
+                               30px 55px, 45px 5px, 10px 70px, 70px 60px, 35px 20px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 28px;
+            color: #6e6e73;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Company Facts Section */
+        .company-facts {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        .company-facts h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .fact-item {
+            padding: 30px;
+            background: #f5f5f7;
+            border-radius: 18px;
+        }
+
+        .fact-label {
+            font-size: 14px;
+            color: #6e6e73;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .fact-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .product-section:nth-child(even) {
+            background: #f5f5f7;
+        }
+
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .product-category {
+            font-size: 14px;
+            color: #6e6e73;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 15px;
+        }
+
+        .product-subtitle {
+            font-size: 24px;
+            color: #6e6e73;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            margin: 0 auto 50px;
+            background: #e8e8ed;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #6e6e73;
+            overflow: hidden;
+         }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  
+            display: block;       
+        }
+
+        .product-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-label {
+            font-size: 13px;
+            color: #6e6e73;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .product-specs {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 18px;
+        }
+
+        .product-specs ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .product-specs li {
+            font-size: 16px;
+            color: #1d1d1f;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .product-specs li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #f5f5f7;
+            padding: 40px;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .product-title {
+                font-size: 36px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">SAMSUNG</a>
+            <ul class="nav-links">
+                <li><a href="#unternehmen">Unternehmen</a></li>
+                <li><a href="#smartphones">Smartphones</a></li>
+                <li><a href="#tablets">Tablets</a></li>
+                <li><a href="#tvs">TVs</a></li>
+                <li><a href="#audio">Audio</a></li>
+                <li><a href="#wearables">Wearables</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Samsung</h1>
+        <p>Innovationen, die inspirieren</p>
+    </section>
+
+    <!-- Company Facts -->
+    <section class="company-facts" id="unternehmen">
+        <h2>Das Unternehmen</h2>
+        <div class="facts-grid">
+            <div class="fact-item">
+                <div class="fact-label">Gründung</div>
+                <div class="fact-value">1938</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-label">Hauptsitz</div>
+                <div class="fact-value">Seoul, Südkorea</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-label">Mitarbeiter</div>
+                <div class="fact-value">267.000+</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-label">Namensbedeutung</div>
+                <div class="fact-value">"Drei Sterne"</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-label">Jahresumsatz</div>
+                <div class="fact-value">$244 Mrd.</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-label">Marktposition</div>
+                <div class="fact-value">#1 Smartphone-Hersteller weltweit</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-label">Gründer</div>
+                <div class="fact-value">Lee Byung-chul</div>
+            </div>
+            <div class="fact-item">
+                <div class="fact-label">Branche</div>
+                <div class="fact-value">Technologie & Elektronik</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galaxy S Series -->
+    <section class="product-section" id="smartphones">
+        <div class="product-container">
+            <div class="product-header">
+                <div class="product-category">Smartphone</div>
+                <h2 class="product-title">Galaxy S24 Ultra</h2>
+            </div>
+            <div class="product-image">
+                <img src="bilder/galaxy.jpg" alt="Samsung Fernseher">
+            </div>
+            <div class="product-details">
+                <div class="detail-item">
+                    <div class="detail-label">Produktion seit</div>
+                    <div class="detail-value">2024</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Verkaufszahlen (S-Serie gesamt)</div>
+                    <div class="detail-value">300+ Mio. Geräte</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Preis ab</div>
+                    <div class="detail-value">€1.449</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Bildschirmgröße</div>
+                    <div class="detail-value">6,8" QHD+</div>
+                </div>
+            </div>
+            <div class="product-specs">
+                <ul>
+                    <li>200 MP Hauptkamera mit AI-Unterstützung</li>
+                    <li>Snapdragon 8 Gen 3 Prozessor</li>
+                    <li>S Pen integriert</li>
+                    <li>5.000 mAh Akku</li>
+                    <li>Titanium-Gehäuse</li>
+                    <li>Galaxy AI Features</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galaxy Z Fold -->
+    <section class="product-section">
+        <div class="product-container">
+            <div class="product-header">
+                <div class="product-category">Foldable Smartphone</div>
+                <h2 class="product-title">Galaxy Z Fold6</h2>
+            </div>
+            <div class="product-image">
+                <img src="bilder/fold.jpg" alt="Samsung Fernseher">
+            </div>
+            <div class="product-details">
+                <div class="detail-item">
+                    <div class="detail-label">Produktion seit</div>
+                    <div class="detail-value">2019 (Serie)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Verkaufszahlen</div>
+                    <div class="detail-value">15+ Mio. Geräte</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Preis ab</div>
+                    <div class="detail-value">€1.999</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Display</div>
+                    <div class="detail-value">7,6" Faltbar</div>
+                </div>
+            </div>
+            <div class="product-specs">
+                <ul>
+                    <li>Faltbares 7,6" Dynamic AMOLED Display</li>
+                    <li>6,3" Cover-Display</li>
+                    <li>Snapdragon 8 Gen 3</li>
+                    <li>12 GB RAM</li>
+                    <li>Triple-Kamera-System</li>
+                    <li>Multitasking mit bis zu 3 Apps gleichzeitig</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galaxy Z Flip -->
+    <section class="product-section">
+        <div class="product-container">
+            <div class="product-header">
+                <div class="product-category">Foldable Smartphone</div>
+                <h2 class="product-title">Galaxy Z Flip6</h2>
+            </div>
+            <div class="product-image">
+                <img src="bilder/flip.png" alt="Samsung Fernseher">
+            </div>
+            <div class="product-details">
+                <div class="detail-item">
+                    <div class="detail-label">Produktion seit</div>
+                    <div class="detail-value">2020 (Serie)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Verkaufszahlen</div>
+                    <div class="detail-value">20+ Mio. Geräte</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Preis ab</div>
+                    <div class="detail-value">€1.199</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Display</div>
+                    <div class="detail-value">6,7" Faltbar</div>
+                </div>
+            </div>
+            <div class="product-specs">
+                <ul>
+                    <li>6,7" FHD+ Dynamic AMOLED Display</li>
+                    <li>3,4" Super AMOLED Cover-Display</li>
+                    <li>50 MP Dual-Kamera</li>
+                    <li>Flex Mode für freihändige Aufnahmen</li>
+                    <li>4.000 mAh Akku</li>
+                    <li>Kompaktes Taschenformat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Neo QLED TV -->
+    <section class="product-section" id="tvs">
+        <div class="product-container">
+            <div class="product-header">
+                <div class="product-category">Fernseher</div>
+                <h2 class="product-title">Neo QLED 8K QN900D</h2>
+            </div>
+            <div class="product-image">
+                <img src="bilder/fernseher.jpeg" alt="Samsung Fernseher">
+            </div>
+            <div class="product-details">
+                <div class="detail-item">
+                    <div class="detail-label">Produktion seit</div>
+                    <div class="detail-value">2021 (Neo QLED)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Verkaufszahlen (QLED-Serie)</div>
+                    <div class="detail-value">50+ Mio. Geräte</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Preis ab</div>
+                    <div class="detail-value">€5.499</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Verfügbare Größen</div>
+                    <div class="detail-value">65" - 85"</div>
+                </div>
+            </div>
+            <div class="product-specs">
+                <ul>
+                    <li>8K Auflösung (7680 x 4320)</li>
+                    <li>Quantum Matrix Pro Technologie</li>
+                    <li>Neural Quantum Processor 8K</li>
+                    <li>Infinity Screen Design</li>
+                    <li>Object Tracking Sound Pro</li>
+                    <li>Gaming Hub mit 144Hz Support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Galaxy Buds Pro -->
+    <section class="product-section" id="audio">
+        <div class="product-container">
+            <div class="product-header">
+                <div class="product-category">Audio</div>
+                <h2 class="product-title">Galaxy Buds3 Pro</h2>
+            </div>
+            <div class="product-image">
+                <img src="bilder/buds.jpeg" alt="Samsung Fernseher">
+            </div>
+            <div class="product-details">
+                <div class="detail-item">
+                    <div class="detail-label">Produktion seit</div>
+                    <div class="detail-value">2019 (Serie)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Verkaufszahlen (Buds-Serie)</div>
+                    <div class="detail-value">100+ Mio. Geräte</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Preis ab</div>
+                    <div class="detail-value">€249</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Akkulaufzeit</div>
+                    <div class="detail-value">Bis zu 30h</div>
+                </div>
+            </div>
+            <div class="product-specs">
+                <ul>
+                    <li>Active Noise Cancellation (ANC)</li>
+                    <li>360 Audio mit Dolby Atmos</li>
+                    <li>Adaptive EQ</li>
+                    <li>IPX7 Wasserschutz</li>
+                    <li>Wireless Charging Case</li>
+                    <li>Low Latency Gaming Mode</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Galaxy Watch -->
+    <section class="product-section" id="wearables">
+        <div class="product-container">
+            <div class="product-header">
+                <div class="product-category">Wearable</div>
+                <h2 class="product-title">Galaxy Watch7</h2>
+            </div>
+            <div class="product-image">
+                <img src="bilder/watch.jpg" alt="Samsung Fernseher">
+            </div>
+            <div class="product-details">
+                <div class="detail-item">
+                    <div class="detail-label">Produktion seit</div>
+                    <div class="detail-value">2018 (Serie)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Verkaufszahlen (Watch-Serie)</div>
+                    <div class="detail-value">40+ Mio. Geräte</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Preis ab</div>
+                    <div class="detail-value">€319</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Akkulaufzeit</div>
+                    <div class="detail-value">Bis zu 40h</div>
+                </div>
+            </div>
+            <div class="product-specs">
+                <ul>
+                    <li>Advanced Sleep Coaching</li>
+                    <li>Body Composition Messung</li>
+                    <li>EKG & Blutdruck-Monitoring</li>
+                    <li>Always-On AMOLED Display</li>
+                    <li>5ATM + IP68 Wasserschutz</li>
+                    <li>Wear OS powered by Samsung</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p style="margin-top: 10px;">Anesh.</p>
+    </footer>
+
+</body>
+</html>
