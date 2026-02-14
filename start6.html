@@ -18,7 +18,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -66,6 +65,34 @@
             text-align: center;
             padding: 80px 40px 100px;
             background: #f5f5f7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, #0066cc 3px, transparent 3px),
+                radial-gradient(circle at 60% 70%, #6e6e73 2.5px, transparent 2.5px),
+                radial-gradient(circle at 80% 20%, #0066cc 2px, transparent 2px),
+                radial-gradient(circle at 35% 80%, #6e6e73 3px, transparent 3px),
+                radial-gradient(circle at 90% 50%, #0066cc 2.5px, transparent 2.5px),
+                radial-gradient(circle at 15% 60%, #6e6e73 2px, transparent 2px),
+                radial-gradient(circle at 70% 40%, #0066cc 3px, transparent 3px),
+                radial-gradient(circle at 45% 15%, #6e6e73 2.5px, transparent 2.5px),
+                radial-gradient(circle at 25% 90%, #0066cc 2px, transparent 2px),
+                radial-gradient(circle at 55% 55%, #6e6e73 3px, transparent 3px);
+            background-size: 100px 100px, 120px 120px, 90px 90px, 110px 110px, 95px 95px,
+                           105px 105px, 115px 115px, 85px 85px, 100px 100px, 130px 130px;
+            background-position: 0 0, 20px 30px, 50px 10px, 15px 40px, 60px 25px,
+                               30px 55px, 45px 5px, 10px 70px, 70px 60px, 35px 20px;
+            opacity: 0.3;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -73,12 +100,16 @@
             font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
 
         .hero p {
             font-size: 28px;
             color: #6e6e73;
             font-weight: 400;
+            position: relative;
+            z-index: 2;
         }
 
         /* Company Facts Section */
@@ -174,6 +205,14 @@
             justify-content: center;
             font-size: 18px;
             color: #6e6e73;
+            overflow: hidden;
+         }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  
+            display: block;       
         }
 
         .product-details {
@@ -258,33 +297,7 @@
                 display: none;
             }
         }
-
-        .product-image {
-            width: 100%;
-            max-width: 800px;
-            height: 500px;
-            margin: 0 auto 50px;
-            background: #e8e8ed;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            color: #6e6e73;
-            overflow: hidden;
-         }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;  
-            display: block;       
-        }
     </style>
-
-
-
-
 </head>
 <body>
     <!-- Navigation -->
@@ -355,7 +368,7 @@
                 <h2 class="product-title">Galaxy S24 Ultra</h2>
             </div>
             <div class="product-image">
-                <img src="bilder/phone.jpeg" alt="Samsung Fernseher">
+                <img src="bilder/galaxy.jpg" alt="Samsung Fernseher">
             </div>
             <div class="product-details">
                 <div class="detail-item">
@@ -563,7 +576,7 @@
                 <h2 class="product-title">Galaxy Watch7</h2>
             </div>
             <div class="product-image">
-                <img src="bilder/watch.jpeg" alt="Samsung Fernseher">
+                <img src="bilder/watch.jpg" alt="Samsung Fernseher">
             </div>
             <div class="product-details">
                 <div class="detail-item">
@@ -599,8 +612,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Samsung Electronics. Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 10px;">Dies ist eine Bildungsprojekt-Website.</p>
+        <p style="margin-top: 10px;">Anesh.</p>
     </footer>
 
 </body>
